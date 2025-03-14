@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/rustproject_one_backend"
+]
+resolver = "2"

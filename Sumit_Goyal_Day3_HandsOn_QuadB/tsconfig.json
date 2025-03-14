@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "allowJs": true, 
+    "checkJs": false,
+    "target": "es2022",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*", "bin/**/*", "tests/**/*", "bin", "npmpackage_frontend.did.js"],
+  "exclude": ["node_modules"]
+}

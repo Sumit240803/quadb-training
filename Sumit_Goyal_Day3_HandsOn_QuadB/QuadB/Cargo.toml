@@ -1,0 +1,5 @@
+[workspace]
+    members = [
+      "src/QuadB_backend"
+    ]
+    resolver = "2"

@@ -1,0 +1,20 @@
+
+# Outputs
+dist/
+
+#IDEs
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# modules
+node_modules
+
+#private
+.env
+
+# Mac OSX Finder files.
+**/.DS_Store
+.DS_Store

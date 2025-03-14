@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "QuadB_backend": {
+      "candid": "src/QuadB_backend/QuadB_backend.did",
+      "package": "QuadB_backend",
+      "type": "rust"
+    },
+    "QuadB_frontend": {
+      "dependencies": [
+        "QuadB_backend"
+      ],
+      "source": [
+        "src/QuadB_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "QuadB_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
