@@ -1,0 +1,3 @@
+service : {
+    buy_item: (text, nat64) -> (text);
+}

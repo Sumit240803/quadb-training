@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "src/wallet_cannister_backend",
+    "src/wallet_cannister",
+    "src/store_cannister"
+]
+resolver = "2"

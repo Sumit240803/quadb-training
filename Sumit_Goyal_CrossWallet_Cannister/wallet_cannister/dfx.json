@@ -1,0 +1,37 @@
+{
+  "canisters": {
+    "wallet_cannister_backend": {
+      "candid": "src/wallet_cannister_backend/wallet_cannister_backend.did",
+      "package": "wallet_cannister_backend",
+      "type": "rust"
+    },
+    "wallet_cannister" :{
+      "candid" : "src/wallet_cannister/wallet_cannister.did",
+      "package" : "wallet_cannister",
+      "type" : "rust"
+    },
+    "store_cannister":{
+      "candid" : "src/store_cannister/store_cannister.did",
+      "package" : "store_cannister",
+      "type" : "rust"
+    },
+    "wallet_cannister_frontend": {
+      "dependencies": [
+        "wallet_cannister_backend"
+      ],
+      "source": [
+        "src/wallet_cannister_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "wallet_cannister_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

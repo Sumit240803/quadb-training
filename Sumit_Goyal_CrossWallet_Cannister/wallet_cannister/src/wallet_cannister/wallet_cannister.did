@@ -1,0 +1,5 @@
+service : {
+    get_balance :() -> (nat64) query;
+    deposit : (nat64) ->();
+    withdraw : (nat64) -> (variant {Ok;Err:text});
+}
