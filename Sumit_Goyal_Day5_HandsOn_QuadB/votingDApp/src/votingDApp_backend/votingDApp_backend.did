@@ -1,0 +1,4 @@
+service : {
+     "vote": (text) -> ();
+    "get_results": () -> (vec record { text; nat64 }) query;
+}

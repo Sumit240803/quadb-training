@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/votingDApp_backend"
+]
+resolver = "2"
