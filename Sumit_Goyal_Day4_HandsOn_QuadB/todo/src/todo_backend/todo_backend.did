@@ -1,0 +1,6 @@
+service : {
+    "add_todo": (text) -> (nat);
+    "get_todos": () -> (vec record { id: nat; title: text; completed: bool }) query;
+    "toggle_todo": (nat) -> (bool);
+    "delete_todo": (nat) -> (bool);
+}
