@@ -26,6 +26,7 @@ This Repository contains all the hands on of the training program for the QuadB 
 ### Week 3 (Day 11 - Day 15)
 - Ethereum with Solidity
 - Smart Contracts with Hardhat and Remix
+- Advanced Projects
 
 ## Support
 
