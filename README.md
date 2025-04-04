@@ -1,7 +1,13 @@
 
 # QuadB Technologies Training Repository
 
-This Repository contains all the hands on of the training program for the QuadB Technologies related to blockchain development
+This Repository contains all the hands on of the training program for the QuadB Technologies related to blockchain development. You can find multiple projects from the following blockchain 
+- Ethereum
+- Solana
+- ICP
+- Aptos
+
+I have also deployed multiple project which you can find on the right tab of my Repository under developments section.
 
 
 
@@ -26,9 +32,19 @@ This Repository contains all the hands on of the training program for the QuadB 
 ### Week 3 (Day 11 - Day 15)
 - Ethereum with Solidity
 - Smart Contracts with Hardhat and Remix
-- Reentrancy Attack Learning and Overflow Attacks in Solidity
-- Web3 Integration using Frontend and MetaMask Wallet 
-- Testing Smart Contracts 
+- Advanced Projects
+
+## Learning Support Material
+
+- Ethereum and Smart Contracts
+    - https://youtu.be/-1GB6m39-rM?si=Ke54sfukHTDDYNsN
+- Solana 
+    - https://www.youtube.com/watch?v=amAq-WHAFs8
+- ICP 
+    - https://youtube.com/playlist?list=PLuhDt1vhGcrdR2h6nPNylXKS4u8L-efvD&si=dZfFWhf_QUm1gvOT
+- Aptos
+    - https://youtube.com/playlist?list=PLLkrq2VBYc1aMSahgDWehzjhEOXJnLG9C&si=hsO6SzFXLwJJULfR
+
 
 ## Support
 
@@ -47,4 +63,15 @@ https://leetcode.com/u/goyalsumit651/
 ## Authors
 
  [@Sumit](https://www.github.com/Sumit240803)
+
+
+## 🚀 About Me
+Learning New Technologies and mastering the current tech stacks and adapting myself in this revolutionary world. 
+Currenty Developing Projects on Blockchain - Ethereum, ICP, Solana and Aptos.
+
+### My skills  
+- Web2 - Full Stack Application - MERN 
+- Web3 - BlockChain Development 
+- Android Development - Java and Kotlin
+
 
