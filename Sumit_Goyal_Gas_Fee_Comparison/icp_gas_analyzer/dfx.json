@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "icp_gas_analyzer_backend": {
+      "candid": "src/icp_gas_analyzer_backend/icp_gas_analyzer_backend.did",
+      "package": "icp_gas_analyzer_backend",
+      "type": "rust"
+    },
+    "icp_gas_analyzer_frontend": {
+      "dependencies": [
+        "icp_gas_analyzer_backend"
+      ],
+      "source": [
+        "src/icp_gas_analyzer_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "icp_gas_analyzer_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/icp_gas_analyzer_backend"
+]
+resolver = "2"

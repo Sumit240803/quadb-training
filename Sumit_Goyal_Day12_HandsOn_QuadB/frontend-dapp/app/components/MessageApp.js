@@ -19,7 +19,11 @@ const MessageApp = () => {
     provider = new ethers.BrowserProvider(window.ethereum);
     signer = await provider.getSigner(); // 🔹 FIX: Await signer
     contract = new ethers.Contract(contractAddress, contractABI, signer);
+    const functionNames = contract.interface.fragments
+    .filter(fragment => fragment.type === "function") // Get only function types
+    .map(fragment => fragment.name); // Extract function names
 
+    console.log(functionNames);
     const accounts = await provider.send("eth_requestAccounts", []);
     setAccount(accounts[0]); // Store the first account
     setWalletConnected(true);
