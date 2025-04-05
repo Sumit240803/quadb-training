@@ -1,4 +1,4 @@
-import ticketabi from "../../../ticketbackend/artifacts/contracts/TicketMarketPlace.sol/TicketMarketPlace.json";
+
 export const ContractAddress = "0x0A0eB8Dc7adcBC524e2315049CDf4e0F3f85757f";
 export const ContractABI =[
 	{
