@@ -1,0 +1,24 @@
+{
+  "name": "sol-nft",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@metaplex-foundation/mpl-token-metadata": "^3.4.0",
+    "@metaplex-foundation/umi": "^1.1.1",
+    "@metaplex-foundation/umi-bundle-defaults": "^1.1.1",
+    "@solana-developers/helpers": "^2.8.1",
+    "@solana/web3.js": "^1.98.0",
+    "esrun": "^3.2.26"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.3"
+  }
+}

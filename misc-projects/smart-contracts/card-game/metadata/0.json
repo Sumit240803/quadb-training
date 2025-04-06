@@ -1,0 +1,19 @@
+{
+  "name": "Common Card #0",
+  "description": "A common card from the bytes realm.",
+  "image": "ipfs://images/img.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Attack",
+      "value": 26
+    },
+    {
+      "trait_type": "Defense",
+      "value": 20
+    }
+  ]
+}

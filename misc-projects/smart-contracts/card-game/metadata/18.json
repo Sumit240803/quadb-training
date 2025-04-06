@@ -1,0 +1,19 @@
+{
+  "name": "Legendary Card #18",
+  "description": "A legendary card from the bytes realm.",
+  "image": "ipfs://images/img.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Attack",
+      "value": 94
+    },
+    {
+      "trait_type": "Defense",
+      "value": 89
+    }
+  ]
+}

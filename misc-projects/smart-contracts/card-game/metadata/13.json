@@ -1,0 +1,19 @@
+{
+  "name": "Rare Card #13",
+  "description": "A rare card from the bytes realm.",
+  "image": "ipfs://images/img.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Attack",
+      "value": 41
+    },
+    {
+      "trait_type": "Defense",
+      "value": 48
+    }
+  ]
+}

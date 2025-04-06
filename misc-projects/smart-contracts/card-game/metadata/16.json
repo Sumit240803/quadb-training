@@ -1,0 +1,19 @@
+{
+  "name": "Epic Card #16",
+  "description": "A epic card from the bytes realm.",
+  "image": "ipfs://images/img.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Attack",
+      "value": 85
+    },
+    {
+      "trait_type": "Defense",
+      "value": 74
+    }
+  ]
+}
