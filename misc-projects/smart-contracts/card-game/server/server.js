@@ -3,8 +3,7 @@ const cors = require("cors");
 const http = require("http");
 const {Server} = require("socket.io");
 const { generate } = require("./generateDeck");
-const { result } = require("../gameLogic");
-const { json } = require("stream/consumers");
+const { result } = require("./gameLogic");
 const app = express();
 
 app.use(cors());
@@ -28,8 +27,8 @@ io.on("connection",(socket)=>{
 
         console.log(`Player Joined ${socket.id} with room id ${roomId}`);
         const deck = generate();
-        socket.emit("your-deck" , deck);
-        console.log(deck);
+        socket.emit("your-deck" ,deck);
+        console.log(JSON.stringify(deck));
         if(!roomDecks[roomId]){
             roomDecks[roomId] = {}
         }
@@ -85,15 +84,23 @@ io.on("connection",(socket)=>{
                 const score = result(points[roomId][round], player1, player2, scores, roomId);
                 console.log("✅ Round result calculated:", JSON.stringify(score));
     
-                // Clean up if needed
+             
                 delete points[roomId][round];
             }
         }
     });
     
-    socket.on("game-result", ({ roomId, result }) => {
+    socket.on("game-result", ({ roomId, round }) => {
         console.log(`🏆 Game finished in ${roomId}`);
-        socket.to(roomId).emit("game-result", result);
+        
+        io.to(roomId).emit("round-result", {
+            round,
+            scores: {
+              [player1]: scores[roomId][player1],
+              [player2]: scores[roomId][player2]
+            }
+          });
+          
     });
     socket.on("disconnect", () => {
         console.log("❌ Player disconnected:", socket.id);

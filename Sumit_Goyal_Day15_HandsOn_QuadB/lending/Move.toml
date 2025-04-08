@@ -1,0 +1,15 @@
+[package]
+name = "lendingapp"
+version = "1.0.0"
+authors = []
+
+[addresses]
+lending_admin = "0xc6aa93bf284dcb72e597e1be9f1df3035f0f3ef676e9a465d580dd665bcf5bca"
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-framework.git"
+rev = "mainnet"
+subdir = "aptos-framework"
+
+[dev-dependencies]
