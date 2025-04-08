@@ -27,7 +27,7 @@ module 0xc6aa93bf284dcb72e597e1be9f1df3035f0f3ef676e9a465d580dd665bcf5bca::lendi
     }
 
     /// Initialize user loan tracking
-    public fun init_user(account: &signer) {
+    public entry fun init_user(account: &signer) {
         move_to(account, Loans {
             active_loans: vector::empty<Loan>(),
         });
@@ -37,7 +37,8 @@ module 0xc6aa93bf284dcb72e597e1be9f1df3035f0f3ef676e9a465d580dd665bcf5bca::lendi
     public entry fun init_pool(admin: &signer) {
         assert!(signer::address_of(admin) == @lending_admin, ENOT_ADMIN);
         
-        let initial_coins = coin::withdraw<AptosCoin>(admin, 100000000); // Initial pool funding
+        let initial_coins = coin::withdraw<AptosCoin>(admin, 3_000_000); // 1 APT
+
         move_to(admin, LendingPool { coins: initial_coins });
     }
 

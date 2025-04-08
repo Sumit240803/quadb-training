@@ -18,39 +18,44 @@ const roomDecks = {};
 const roomState = {};
 const points = {};
 const scores = {};
+const rounds = {};
 io.on("connection",(socket)=>{
     console.log("Player Connected" , socket.id);
 
     //Joining the game
-    socket.on("join-game",(roomId)=>{
+    socket.on("join-game", (roomId) => {
         socket.join(roomId);
-
+    
         console.log(`Player Joined ${socket.id} with room id ${roomId}`);
+    
         const deck = generate();
-        socket.emit("your-deck" ,deck);
+        socket.emit("your-deck", deck);
         console.log(JSON.stringify(deck));
-        if(!roomDecks[roomId]){
-            roomDecks[roomId] = {}
-        }
-
+    
+        if (!roomDecks[roomId]) roomDecks[roomId] = {};
         roomDecks[roomId][socket.id] = deck;
-        if(!roomState[roomId]){
-            roomState[roomId] ={
-                turn : socket.id
-            }
+    
+        if (!roomState[roomId]) {
+            roomState[roomId] = {
+                turn: socket.id
+            };
+            io.to(roomId).emit("turn-change", socket.id);
         }
+    
+        if (!rounds[roomId]) rounds[roomId] = 1;
+    
         console.log(roomDecks[roomId]);
-        console.log(`Deck with player ${socket.id} is ${roomDecks[roomId][socket.id]}`) 
+        console.log(`Deck with player ${socket.id} is ${roomDecks[roomId][socket.id]}`);
+    
         socket.to(roomId).emit("player-joined", socket.id);
-        
-        
-    })
-  
-
-    //Playing The Card
-    socket.on("play-card", ({ roomId, cardData, round }) => {
+    });
+    
+    // Playing The Card
+    socket.on("play-card", ({ roomId, cardData }) => {
         const playerId = socket.id;
         const room = roomDecks[roomId];
+        const round = rounds[roomId];
+    
         if (room && room[playerId] && roomState[roomId]?.turn === playerId) {
             const [player1, player2] = Object.keys(room);
     
@@ -61,6 +66,7 @@ io.on("connection",(socket)=>{
                 attack: cardData.attack || 0,
                 defense: cardData.defense || 0
             };
+    
             points[roomId][round][playerId] = cardStats;
     
             socket.to(roomId).emit("opponent-played", { playerId, cardData });
@@ -84,15 +90,24 @@ io.on("connection",(socket)=>{
                 const score = result(points[roomId][round], player1, player2, scores, roomId);
                 console.log("✅ Round result calculated:", JSON.stringify(score));
     
-             
+                io.to(roomId).emit("round-result", {
+                    round,
+                    scores: {
+                        [player1]: scores[roomId][player1] || 0,
+                        [player2]: scores[roomId][player2] || 0
+                    }
+                });
+    
                 delete points[roomId][round];
+                rounds[roomId] += 1;
             }
         }
     });
     
-    socket.on("game-result", ({ roomId, round }) => {
+    /*socket.on("game-result", ({ roomId, round }) => {
         console.log(`🏆 Game finished in ${roomId}`);
-        
+        const players = Object.keys(roomDecks[roomId] || {});
+        const [player1, player2] = players;
         io.to(roomId).emit("round-result", {
             round,
             scores: {
@@ -101,12 +116,12 @@ io.on("connection",(socket)=>{
             }
           });
           
-    });
+    });*/
     socket.on("disconnect", () => {
         console.log("❌ Player disconnected:", socket.id);
     });
 });
-const PORT = 3001;
+const PORT = 5000;
 server.listen(PORT,()=>{
     console.log(`Web Socket Running on port ${PORT}`)
 })

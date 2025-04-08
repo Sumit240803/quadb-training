@@ -4,7 +4,7 @@ version = "1.0.0"
 authors = []
 
 [addresses]
-lending_admin = "0xc6aa93bf284dcb72e597e1be9f1df3035f0f3ef676e9a465d580dd665bcf5bca"
+lending_admin = "0x9eead60a142fe19e380baf6d43720afe230739cde897891ada81419f901f7f28"
 [dev-addresses]
 
 [dependencies.AptosFramework]
